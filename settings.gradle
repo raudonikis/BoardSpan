@@ -1,3 +1,4 @@
 rootProject.name='BoardSpan'
 include ':app'
 include ':login'
+include ':core'
