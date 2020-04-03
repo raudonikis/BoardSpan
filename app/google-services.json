@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "250538797242",
+    "firebase_url": "https://boardgamestats-1d1c6.firebaseio.com",
+    "project_id": "boardgamestats-1d1c6",
+    "storage_bucket": "boardgamestats-1d1c6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:250538797242:android:2a92a5861119feca007a83",
+        "android_client_info": {
+          "package_name": "com.raudonikis.boardspan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "250538797242-jj0vsnap5shmlkpgg5dahrv4b3omjo6a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwtDksGek6SKh9tDDbk4jPdnlpkIJBU4o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "250538797242-jj0vsnap5shmlkpgg5dahrv4b3omjo6a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

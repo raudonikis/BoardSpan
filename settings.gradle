@@ -1,0 +1,3 @@
+rootProject.name='BoardSpan'
+include ':app'
+include ':login'
