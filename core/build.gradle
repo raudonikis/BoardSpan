@@ -1,6 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: "kotlin-kapt"
 
 android {
     compileSdkVersion 29
@@ -29,13 +30,21 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     // Kotlin
-    api Kotlin.kotlin_core
+    api Kotlin.core
 
     // Support
     api Support.constraint_layout
     api Support.app_compat
 
     // Navigation component
-    api Navigation.navigation_fragment
-    api Navigation.navigation_ui
+    api Navigation.fragment
+    api Navigation.ui
+
+    // Firebase
+    api Firebase.auth
+    api Firebase.google_play
+
+    // Dagger
+    api Dagger.main
+    kapt Dagger.compiler
 }
