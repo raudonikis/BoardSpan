@@ -6,6 +6,7 @@ object Versions {
     const val firebase = "19.3.0"
     const val google_play = "18.0.0"
     const val dagger = "2.27"
+    const val timber = "4.7.1"
 }
 
 object Kotlin {
@@ -30,4 +31,8 @@ object Firebase {
 object Dagger {
     const val main = "com.google.dagger:dagger:${Versions.dagger}"
     const val compiler = "com.google.dagger:dagger-compiler:${Versions.dagger}"
+}
+
+object Timber {
+    const val timber = "com.jakewharton.timber:timber:${Versions.timber}"
 }

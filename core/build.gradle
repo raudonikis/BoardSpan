@@ -47,4 +47,7 @@ dependencies {
     // Dagger
     api Dagger.main
     kapt Dagger.compiler
+
+    // Logging
+    api Timber.timber
 }
