@@ -1,4 +1,4 @@
-package com.raudonikis.core.di.modules
+package com.raudonikis.auth.di.modules
 
 import com.google.firebase.auth.FirebaseAuth
 import dagger.Module

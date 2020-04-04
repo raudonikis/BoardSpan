@@ -10,8 +10,9 @@
         app:graph="@navigation/nav_graph_login" />
     <fragment
         android:id="@+id/authHandlerFragment"
-        android:name="com.raudonikis.boardspan.ui.AuthHandlerFragment"
-        android:label="AuthHandlerFragment">
+        android:name="com.raudonikis.auth.ui.AuthHandlerFragment"
+        android:label="AuthHandlerFragment"
+        tools:layout="@layout/fragment_auth_handler">
         <action
             android:id="@+id/action_mainFragment_to_nav_graph_login"
             app:destination="@id/nav_graph_login" />

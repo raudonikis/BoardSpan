@@ -1,4 +1,4 @@
-package com.raudonikis.core.auth
+package com.raudonikis.auth.enums
 
 enum class AuthState {
     AUTHORIZED,
