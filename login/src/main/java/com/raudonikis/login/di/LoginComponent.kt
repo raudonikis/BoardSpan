@@ -1,8 +1,8 @@
 package com.raudonikis.login.di
 
 import com.raudonikis.auth.di.modules.AuthModule
-import com.raudonikis.login.ui.SignUpFragment
-import com.raudonikis.login.ui.LoginFragment
+import com.raudonikis.login.ui.signup.SignUpFragment
+import com.raudonikis.login.ui.login.LoginFragment
 import dagger.Component
 
 @Component(modules = [AuthModule::class])

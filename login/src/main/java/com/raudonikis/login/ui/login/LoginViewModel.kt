@@ -1,4 +1,4 @@
-package com.raudonikis.login.ui
+package com.raudonikis.login.ui.login
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel

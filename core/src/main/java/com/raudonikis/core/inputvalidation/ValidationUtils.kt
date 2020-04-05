@@ -18,4 +18,12 @@ object ValidationUtils {
             else -> ValidationResult.VALID
         }
     }
+
+    fun isPasswordConfirmInputValid(password: String, confirmPassword: String): ValidationResult {
+        return when {
+            confirmPassword.isEmpty() -> ValidationResult.EMPTY
+            password != confirmPassword -> ValidationResult.INVALID
+            else -> ValidationResult.VALID
+        }
+    }
 }
