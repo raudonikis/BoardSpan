@@ -3,12 +3,11 @@ package com.raudonikis.login.ui
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
-import com.raudonikis.core.extensions.navigate
+import androidx.navigation.fragment.findNavController
 import com.raudonikis.login.R
-import com.raudonikis.login.navigation.LoginRouter
-import kotlinx.android.synthetic.main.fragment_login.*
+import kotlinx.android.synthetic.main.fragment_sign_up.*
 
-class LoginFragment : Fragment(R.layout.fragment_login) {
+class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         setUpListeners()
@@ -16,8 +15,8 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
     }
 
     private fun setUpListeners() {
-        text_sign_up.setOnClickListener {
-            navigate(LoginRouter.loginToSignUp)
+        text_go_back.setOnClickListener {
+            findNavController().popBackStack()
         }
     }
 }
