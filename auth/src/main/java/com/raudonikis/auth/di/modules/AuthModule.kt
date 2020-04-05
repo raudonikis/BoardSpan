@@ -1,8 +1,8 @@
 package com.raudonikis.auth.di.modules
 
 import com.google.firebase.auth.FirebaseAuth
-import com.raudonikis.auth.AuthProvider
-import com.raudonikis.auth.FirebaseAuthProvider
+import com.raudonikis.auth.authprovider.AuthProvider
+import com.raudonikis.auth.authprovider.FirebaseAuthProvider
 import dagger.Binds
 import dagger.Module
 import dagger.Provides

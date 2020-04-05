@@ -1,4 +1,4 @@
-package com.raudonikis.auth
+package com.raudonikis.auth.extensions
 
 import com.google.firebase.auth.FirebaseUser
 import com.raudonikis.auth.model.UserAccount

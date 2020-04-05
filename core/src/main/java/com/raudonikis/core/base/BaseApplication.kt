@@ -2,7 +2,7 @@ package com.raudonikis.core.base
 
 import android.app.Application
 import com.raudonikis.core.BuildConfig
-import com.raudonikis.core.di.components.CoreComponent
+import com.raudonikis.core.di.CoreComponent
 import com.raudonikis.core.di.components.DaggerCoreComponent
 import timber.log.Timber
 import timber.log.Timber.DebugTree

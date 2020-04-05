@@ -1,4 +1,4 @@
-package com.raudonikis.core.di.components
+package com.raudonikis.core.di
 
 import android.app.Application
 import com.raudonikis.core.di.scopes.AppScope

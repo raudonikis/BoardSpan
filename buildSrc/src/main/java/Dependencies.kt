@@ -8,6 +8,7 @@ object Versions {
     const val dagger = "2.27"
     const val timber = "4.7.1"
     const val material = "1.1.0"
+    const val live_event = "1.2.0"
 }
 
 object Kotlin {
@@ -18,6 +19,7 @@ object Support {
     const val app_compat = "androidx.appcompat:appcompat:${Versions.app_compat}"
     const val constraint_layout = "androidx.constraintlayout:constraintlayout:${Versions.constraint_layout}"
     const val material = "com.google.android.material:material:${Versions.material}"
+    const val live_event = "com.github.hadilq.liveevent:liveevent:${Versions.live_event}"
 }
 
 object Navigation {
