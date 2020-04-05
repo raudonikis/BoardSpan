@@ -1,14 +1,24 @@
 package com.raudonikis.auth.di.modules
 
 import com.google.firebase.auth.FirebaseAuth
+import com.raudonikis.auth.AuthProvider
+import com.raudonikis.auth.FirebaseAuthProvider
+import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import dagger.Reusable
 
-@Module
-object AuthModule {
+@Module(includes = [AuthModule.AuthModuleInner::class])
+abstract class AuthModule {
 
-    @Provides
+    @Binds
     @Reusable
-    fun provideAuthInstance() = FirebaseAuth.getInstance()
+    abstract fun provideAuthProvider(firebaseAuthProvider: FirebaseAuthProvider): AuthProvider
+
+    @Module
+    object AuthModuleInner {
+        @Provides
+        @Reusable
+        fun provideFirebaseAuthInstance() = FirebaseAuth.getInstance()
+    }
 }

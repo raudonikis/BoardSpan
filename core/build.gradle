@@ -35,6 +35,7 @@ dependencies {
     // Support
     api Support.constraint_layout
     api Support.app_compat
+    api Support.material
 
     // Navigation component
     api Navigation.fragment

@@ -7,6 +7,7 @@ object Versions {
     const val google_play = "18.0.0"
     const val dagger = "2.27"
     const val timber = "4.7.1"
+    const val material = "1.1.0"
 }
 
 object Kotlin {
@@ -16,6 +17,7 @@ object Kotlin {
 object Support {
     const val app_compat = "androidx.appcompat:appcompat:${Versions.app_compat}"
     const val constraint_layout = "androidx.constraintlayout:constraintlayout:${Versions.constraint_layout}"
+    const val material = "com.google.android.material:material:${Versions.material}"
 }
 
 object Navigation {

@@ -1,4 +1,4 @@
-package com.raudonikis.boardspan
+package com.raudonikis.boardspan.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -8,6 +8,7 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.raudonikis.auth.enums.AuthState
 import com.raudonikis.auth.ui.AuthHandlerViewModel
+import com.raudonikis.boardspan.R
 import com.raudonikis.boardspan.di.injector.inject
 import com.raudonikis.boardspan.navigation.AppRouter
 import com.raudonikis.core.di.ViewModelFactory
@@ -27,7 +28,10 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
         authHandlerViewModel =
             ViewModelProvider(this, authHandlerViewModelFactory)[AuthHandlerViewModel::class.java]
         super.onCreate(savedInstanceState)
-        navController = Navigation.findNavController(this, R.id.nav_host_fragment)
+        navController = Navigation.findNavController(
+            this,
+            R.id.nav_host_fragment
+        )
         setUpObservers()
     }
 
