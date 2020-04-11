@@ -1,4 +1,4 @@
-package com.raudonikis.boardspan.di.components
+package com.raudonikis.boardspan.di
 
 import com.raudonikis.auth.di.modules.AuthModule
 import com.raudonikis.boardspan.ui.MainActivity

@@ -10,6 +10,9 @@ import javax.inject.Inject
 
 class SignUpViewModel @Inject constructor(private val authProvider: AuthProvider) : ViewModel() {
 
+    private val _signUpEvent = LiveEvent<Boolean>()
+    val signUpEvent: LiveData<Boolean> = _signUpEvent
+
     private val _emailValidator = LiveEvent<ValidationResult>()
     val emailValidator: LiveData<ValidationResult> = _emailValidator
 
@@ -21,12 +24,16 @@ class SignUpViewModel @Inject constructor(private val authProvider: AuthProvider
 
     fun signIn(email: String, password: String, confirmPassword: String) {
         if (!areInputsValid(email, password, confirmPassword)) return
+        authProvider.signUpWithEmailAndPassword(email, password,
+            onSuccess = { _signUpEvent.postValue(true) },
+            onFailure = { _signUpEvent.postValue(false) })
     }
 
     private fun areInputsValid(email: String, password: String, confirmPassword: String): Boolean {
         val emailValidationResult = ValidationUtils.isEmailInputValid(email)
         val passwordValidationResult = ValidationUtils.isPasswordInputValid(password)
-        val passwordConfirmValidationResult = ValidationUtils.isPasswordConfirmInputValid(password, confirmPassword)
+        val passwordConfirmValidationResult =
+            ValidationUtils.isPasswordConfirmInputValid(password, confirmPassword)
         _emailValidator.postValue(emailValidationResult)
         _passwordValidator.postValue(passwordValidationResult)
         _passwordConfirmValidator.postValue(passwordConfirmValidationResult)

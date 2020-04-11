@@ -71,7 +71,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
             navigate(LoginRouter.loginToSignUp)
         }
         button_login.setOnDebouncedClickListener {
-            loginViewModel.signIn(getEmailInput(), getPasswordInput())
+            loginViewModel.login(getEmailInput(), getPasswordInput())
         }
     }
 

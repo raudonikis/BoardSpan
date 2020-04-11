@@ -19,19 +19,27 @@ class LoginViewModel @Inject constructor(private val authProvider: AuthProvider)
     private val _passwordValidator = LiveEvent<ValidationResult>()
     val passwordValidator: LiveData<ValidationResult> = _passwordValidator
 
-    fun signIn(email: String, password: String) {
-        if(!areInputsValid(email, password)) return
+    fun login(email: String, password: String) {
+        if (!areInputsValid(email, password)) return
         authProvider.signInWithEmailAndPassword(email, password,
             onSuccess = { _loginEvent.postValue(true) },
             onFailure = { _loginEvent.postValue(false) }
         )
     }
 
-    private fun areInputsValid(email: String, password: String): Boolean {
+    private fun isEmailValid(email: String): Boolean {
         val emailValidationResult = ValidationUtils.isEmailInputValid(email)
-        val passwordValidationResult = ValidationUtils.isPasswordInputValid(password)
         _emailValidator.postValue(emailValidationResult)
-        _passwordValidator.postValue(passwordValidationResult)
-        return emailValidationResult == ValidationResult.VALID && passwordValidationResult == ValidationResult.VALID
+        return emailValidationResult == ValidationResult.VALID
     }
+
+    private fun isPasswordValid(password: String): Boolean {
+        val passwordValidationResult = ValidationUtils.isPasswordInputValid(password)
+        _passwordValidator.postValue(passwordValidationResult)
+        return passwordValidationResult == ValidationResult.VALID
+    }
+
+    private fun areInputsValid(email: String, password: String) =
+        isEmailValid(email) && isPasswordValid(password)
+
 }

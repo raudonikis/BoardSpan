@@ -22,7 +22,7 @@ object ValidationUtils {
     fun isPasswordConfirmInputValid(password: String, confirmPassword: String): ValidationResult {
         return when {
             confirmPassword.isEmpty() -> ValidationResult.EMPTY
-            password != confirmPassword -> ValidationResult.INVALID
+            password != confirmPassword -> ValidationResult.PASSWORDS_NOT_MATCHING
             else -> ValidationResult.VALID
         }
     }

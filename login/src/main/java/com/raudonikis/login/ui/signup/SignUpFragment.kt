@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.snackbar.Snackbar
 import com.raudonikis.core.di.ViewModelFactory
 import com.raudonikis.core.extensions.clearErrorMessage
 import com.raudonikis.core.extensions.getInput
@@ -36,31 +37,38 @@ class SignUpFragment : Fragment(R.layout.fragment_sign_up) {
     }
 
     private fun setUpObservers() {
+        signUpViewModel.signUpEvent.observe(viewLifecycleOwner, Observer { result ->
+            when(result) {
+                true -> {
+                    Snackbar.make(root_sign_up, "Account created successfully", Snackbar.LENGTH_LONG).show()
+                    findNavController().popBackStack()
+                }
+                false -> Snackbar.make(root_sign_up, "Failed to create an account", Snackbar.LENGTH_LONG).show()
+            }
+        })
         signUpViewModel.emailValidator.observe(viewLifecycleOwner, Observer { result ->
             when (result) {
                 ValidationResult.EMPTY -> text_input_email.error = getString(R.string.error_email_empty)
                 ValidationResult.INVALID -> text_input_email.error =
                     getString(R.string.error_email_invalid)
-                else -> text_input_email.clearErrorMessage()
+                ValidationResult.VALID -> text_input_email.clearErrorMessage()
+                else -> {}
             }
         })
         signUpViewModel.passwordValidator.observe(viewLifecycleOwner, Observer { result ->
             when (result) {
                 ValidationResult.EMPTY -> text_input_password.error = getString(R.string.error_password_empty)
-                else -> text_input_password.clearErrorMessage()
+                ValidationResult.PASSWORDS_NOT_MATCHING -> text_input_password.error = getString(R.string.error_password_match)
+                ValidationResult.VALID -> text_input_password.clearErrorMessage()
+                else -> {}
             }
         })
         signUpViewModel.passwordConfirmValidator.observe(viewLifecycleOwner, Observer { result ->
             when (result) {
                 ValidationResult.EMPTY -> text_input_password_confirm.error = getString(R.string.error_password_empty)
-                ValidationResult.INVALID -> {
-                    text_input_password_confirm.error = getString(R.string.error_password_match)
-                    text_input_password.error = getString(R.string.error_password_match)
-                }
-                else -> {
-                    text_input_password_confirm.clearErrorMessage()
-                    text_input_password.clearErrorMessage()
-                }
+                ValidationResult.PASSWORDS_NOT_MATCHING -> text_input_password_confirm.error = getString(R.string.error_password_match)
+                ValidationResult.VALID -> text_input_password_confirm.clearErrorMessage()
+                else -> {}
             }
         })
     }
