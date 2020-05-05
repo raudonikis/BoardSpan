@@ -11,6 +11,25 @@ object Versions {
     const val live_event = "1.2.0"
 }
 
+object Modules {
+    const val app = ":app"
+    const val auth = ":auth"
+    const val core = ":core"
+    const val login = ":login"
+}
+
+object Sdk {
+    const val compileSdk = 29
+    const val minSdk = 21
+    const val targetSdk = 29
+}
+
+object Releases {
+    const val applicationId = "com.raudonikis.boardspan"
+    const val versionCode = 1
+    const val versionName = "1.0"
+}
+
 object Kotlin {
     const val core = "androidx.core:core-ktx:${Versions.kotlin}"
 }

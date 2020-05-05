@@ -1,55 +1,7 @@
-apply plugin: 'com.android.library'
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
+apply from: "$rootDir/common-library.gradle"
 apply plugin: "kotlin-kapt"
 
-android {
-    compileSdkVersion 29
-    buildToolsVersion "29.0.3"
-
-    defaultConfig {
-        minSdkVersion 21
-        targetSdkVersion 29
-        versionCode 1
-        versionName "1.0"
-
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        consumerProguardFiles 'consumer-rules.pro'
-    }
-
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
-    }
-
-}
-
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-    // Kotlin
-    api Kotlin.core
-
-    // Support
-    api Support.constraint_layout
-    api Support.app_compat
-    api Support.material
-    api Support.live_event
-
-    // Navigation component
-    api Navigation.fragment
-    api Navigation.ui
-
-    // Firebase
-    api Firebase.auth
-    api Firebase.google_play
-
-    // Dagger
-    api Dagger.main
     kapt Dagger.compiler
-
-    // Logging
-    api Timber.timber
 }

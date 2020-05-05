@@ -1,0 +1,45 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion Sdk.compileSdk
+
+    defaultConfig {
+        minSdkVersion Sdk.minSdk
+        targetSdkVersion Sdk.targetSdk
+        versionCode Releases.versionCode
+        versionName Releases.versionName
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    // Kotlin
+    implementation Kotlin.core
+    // Support
+    implementation Support.constraint_layout
+    implementation Support.app_compat
+    implementation Support.material
+    implementation Support.live_event
+
+    // Navigation component
+    implementation Navigation.fragment
+    implementation Navigation.ui
+
+    // Firebase
+    implementation Firebase.auth
+    implementation Firebase.google_play
+
+    // Dagger
+    implementation Dagger.main
+
+    // Logging
+    implementation Timber.timber
+}
