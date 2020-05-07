@@ -1,28 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/authHandlerFragment">
-
+    app:startDestination="@id/nav_graph_games">
     <include
         android:id="@+id/nav_graph_login"
         app:graph="@navigation/nav_graph_login" />
-    <fragment
-        android:id="@+id/authHandlerFragment"
-        android:name="com.raudonikis.auth.ui.AuthHandlerFragment"
-        android:label="AuthHandlerFragment"
-        tools:layout="@layout/fragment_auth_handler">
-        <action
-            android:id="@+id/action_mainFragment_to_nav_graph_login"
-            app:destination="@id/nav_graph_login" />
-        <action
-            android:id="@+id/action_authHandlerFragment_to_mainFragment"
-            app:destination="@id/mainFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/mainFragment"
-        android:name="com.raudonikis.boardspan.ui.MainFragment"
-        android:label="MainFragment"
-        tools:layout="@layout/fragment_main"/>
+
+    <include
+        android:id="@+id/nav_graph_games"
+        app:graph="@navigation/nav_graph_games" />
+
+    <action
+        android:id="@+id/actionToLoginGraph"
+        app:destination="@id/nav_graph_login" />
+
+    <action
+        android:id="@+id/actionToGamesGraph"
+        app:destination="@id/nav_graph_games" />
+
 </navigation>

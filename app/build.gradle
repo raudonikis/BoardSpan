@@ -21,14 +21,21 @@ android {
             minifyEnabled false
         }
     }
-
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
 }
 
 dependencies {
     implementation project(Modules.core)
     implementation project(Modules.login)
     implementation project(Modules.auth)
+    implementation project(Modules.games)
 
+    // Navigation
+    implementation Navigation.ui
+    implementation Navigation.fragment
     // Dagger
+    implementation Dagger.main
     kapt Dagger.compiler
 }

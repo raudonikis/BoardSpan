@@ -16,6 +16,7 @@ object Modules {
     const val auth = ":auth"
     const val core = ":core"
     const val login = ":login"
+    const val games = ":games"
 }
 
 object Sdk {
