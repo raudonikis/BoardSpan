@@ -1,0 +1,10 @@
+apply from: "$rootDir/common-library.gradle"
+apply plugin: "androidx.navigation.safeargs.kotlin"
+apply plugin: "kotlin-kapt"
+
+dependencies {
+    implementation project(Modules.core)
+
+    // Dagger
+    kapt Dagger.compiler
+}
