@@ -32,6 +32,11 @@ dependencies {
     implementation project(Modules.auth)
     implementation project(Modules.games)
 
+
+    // Firebase
+    implementation Firebase.auth
+    implementation Firebase.google_play
+
     // Navigation
     implementation Navigation.ui
     implementation Navigation.fragment

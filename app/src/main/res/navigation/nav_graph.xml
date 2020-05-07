@@ -13,7 +13,9 @@
 
     <action
         android:id="@+id/actionToLoginGraph"
-        app:destination="@id/nav_graph_login" />
+        app:destination="@id/nav_graph_login"
+        app:popUpTo="@id/nav_graph"
+        app:popUpToInclusive="true" />
 
     <action
         android:id="@+id/actionToGamesGraph"
